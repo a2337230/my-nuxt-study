@@ -1,20 +1,11 @@
-# my-nuxt
-
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+<!--
+ * @Author: your name
+ * @Date: 2020-12-15 11:11:21
+ * @LastEditTime: 2020-12-15 11:36:21
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \01\README.md
+-->
+## 第一天
+###生命周期
+  nuxtServerInit 
