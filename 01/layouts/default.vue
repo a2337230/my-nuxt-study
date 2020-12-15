@@ -4,6 +4,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  // middleware: 'auth'
+  middleware() {
+    console.log("布局层")
+  }
+}
+</script>
 <style>
 html {
   font-family:

@@ -28,7 +28,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  // middleware: 'auth'
+  middleware() {
+    console.log("页面层级")
+  },
+  validate({params, query}) {
+    console.log('vaildate')
+    return true
+  }
+}
 </script>
 
 <style>

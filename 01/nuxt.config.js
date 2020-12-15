@@ -12,6 +12,11 @@ export default {
     ]
   },
 
+  // 配置中间件
+  router: {
+    middleware: 'auth'
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
