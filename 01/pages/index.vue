@@ -34,8 +34,12 @@ export default {
     console.log("页面层级")
   },
   validate({params, query}) {
-    console.log('vaildate')
-    return true
+    console.log('vaildate', params, query)
+    if (query.id) {
+      return false
+    } else {
+      return true
+    }
   }
 }
 </script>
