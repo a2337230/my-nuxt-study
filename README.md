@@ -92,3 +92,6 @@
 ##### 实际效果
 
 ![1608174257817](https://github.com/a2337230/my-nuxt-study/blob/main/nuxt-md-img/1608174257817.png)
+
+------
+
