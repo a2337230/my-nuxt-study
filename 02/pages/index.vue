@@ -6,7 +6,9 @@
 
 <script>
 export default {
-  
+  validate ({params, query}) {
+    return false
+  }
 }
 </script>
 

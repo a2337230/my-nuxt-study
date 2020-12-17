@@ -104,3 +104,36 @@
 ##### 多级路由
 
 ![20201217153456](https://github.com/a2337230/my-nuxt-study/blob/main/nuxt-md-img/20201217153456.png)
+
+##### 扩展路由简单示例
+
+```nuxt
+	// 扩展路由
+    extendRuters(routes, resolve) {
+      routes.push({
+        name: 'home',
+        path: '/index',
+        components: resolve(__dirname, 'pages/index.vue')
+      })
+    }
+```
+
+##### 自定义错误页面
+
+​	在layouts下创建error.vue 文件
+
+```
+<template>
+  <div>
+    {{error.message}}
+  </div>
+</template>
+<script>
+export default {
+  name: 'error',
+  // 接收的错误信息  err: {statusCode, message}
+  props: ['error']
+}
+</script>
+```
+

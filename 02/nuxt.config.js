@@ -18,7 +18,16 @@ export default {
   
   // 配置中间件
   router: {
-    middleware: 'auth'
+    middleware: 'auth',
+
+    // 扩展路由
+    extendRuters(routes, resolve) {
+      routes.push({
+        name: 'home',
+        path: '/index',
+        components: resolve(__dirname, 'pages/index.vue')
+      })
+    }
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
