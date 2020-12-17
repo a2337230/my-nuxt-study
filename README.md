@@ -95,3 +95,6 @@
 
 ------
 
+##### 多级路由
+
+![20201217153456](https://github.com/a2337230/my-nuxt-study/blob/main/nuxt-md-img/20201217153456.png)

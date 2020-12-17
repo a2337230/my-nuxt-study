@@ -1,11 +1,10 @@
 <template>
   <div class="course">
     课程
-    <nuxt-link to="/course/1?a=1">分类1</nuxt-link>
-    <nuxt-link to="/course/2?a=2">分类2</nuxt-link>
-    <nuxt-link to="/course/3?a=3">分类3</nuxt-link>
-    <nuxt-link to="/course/4?a=4">分类4</nuxt-link>
-    <nuxt-link :to="{name: 'course-id', params: {id: 5}, query: {a: 1}}">分类5</nuxt-link>
+    <nuxt-link to="/course/4?a=4">静态分类4</nuxt-link>
+    <nuxt-link :to="{name: 'course-id', params: {id: 5}, query: {a: 1}}">动态分类5</nuxt-link>
+    <nuxt-link to="/course/comment">评论(二级路由)</nuxt-link>
+    <nuxt-link to="/course/comment/comment1">评论回复(三级路由)</nuxt-link>
     <nuxt />
   </div>
 </template>
