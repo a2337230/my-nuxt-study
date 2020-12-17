@@ -1,7 +1,7 @@
 <template>
   <div>
     <Nuxt-link to="/">首页</Nuxt-link>
-    <Nuxt-link to="/course">课程</Nuxt-link>
+    <Nuxt-link to="/course/5">课程</Nuxt-link>
     <Nuxt />
   </div>
 </template>

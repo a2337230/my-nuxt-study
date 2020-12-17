@@ -52,11 +52,11 @@
 
 ### 约定式路由
 
-​	展示区： <nuxt />
-
-​	name: 目录-目录-文件名...
-
-​	子路由：目录下的同级文件为该目录下的一级路由，_开头的为当前路由参数，开头为index时为主入口
+> ​	展示区： <nuxt />
+>
+> ​	name: 目录-目录-文件名...
+>
+> ​	子路由：目录下的同级文件为该目录下的一级路由，_开头的为当前路由参数，开头为index时为主入口
 
 #### 一级路由
 ```
@@ -69,7 +69,8 @@
 
 #### 二级路由
 
-##### 在course下创建携带参数
+> ##### 在course下创建携带参数
+>
 
 ![1608174045418](https://github.com/a2337230/my-nuxt-study/blob/main/nuxt-md-img/1608174045418.png)
 
@@ -120,7 +121,7 @@
 
 ##### 自定义错误页面
 
-​	在layouts下创建error.vue 文件
+> ​	在layouts下创建error.vue 文件
 
 ```
 <template>
@@ -139,7 +140,7 @@ export default {
 
 ##### 设置全局路由动效
 
-​	首先在nuxt.config.js下配置全局css
+> ​	首先在nuxt.config.js下配置全局css
 
 ```
 css: [
@@ -147,7 +148,7 @@ css: [
 ],
 ```
 
-​	在css上写相应的过渡效果
+> ​	在css上写相应的过渡效果
 
 ```
 /* 路由统一动效 */
@@ -164,7 +165,7 @@ css: [
 
 ##### 单独设置某个路由动效
 
-​	在对应路由组件设置 transition 来定义动效指定的类名和动效，动效css也可以写在全局css中
+> ​	在对应路由组件设置 transition 来定义动效指定的类名和动效，动效css也可以写在全局css中
 
 ```
 <template>
@@ -191,3 +192,18 @@ export default {
 </style>
 ```
 
+##### 路由守卫
+
+> ​	前置路由 	依赖中间件 middleware,插件
+>
+> ​								全局守卫： nuxt.config.js 中指向middleware
+>
+> ​													layouts 中定义中间件
+>
+> ​								组件独享守卫： middleware
+>
+> ​								插件全局守卫
+>
+> ​	后置路由	使用vue的 beforeRouteLeave 钩子
+>
+> ​								插件全局守卫
