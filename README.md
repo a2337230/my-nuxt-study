@@ -65,7 +65,7 @@
 
 ##### 在course下创建携带参数
 
-![1608174045418](C:\Users\liuyuru\AppData\Roaming\Typora\typora-user-images\1608174045418.png)
+![1608174045418](https://github.com/a2337230/my-nuxt-study/blob/main/nuxt-md-img/1608174045418.png)
 
 ##### course下的代码
 
@@ -91,4 +91,4 @@
 
 ##### 实际效果
 
-![1608174257817](C:\Users\liuyuru\AppData\Roaming\Typora\typora-user-images\1608174257817.png)
+![1608174257817](https://github.com/a2337230/my-nuxt-study/blob/main/nuxt-md-img/1608174257817.png)
