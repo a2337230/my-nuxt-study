@@ -1,0 +1,11 @@
+/* 路由统一动效
+ */
+
+/* 动画 */
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+/* 入场-出场 */
+.page-enter, .page-leave-active {
+  opacity: 0;
+}

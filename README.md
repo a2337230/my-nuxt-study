@@ -137,3 +137,57 @@ export default {
 </script>
 ```
 
+##### 设置全局路由动效
+
+​	首先在nuxt.config.js下配置全局css
+
+```
+css: [
+    'assets/css/transistion.css'
+],
+```
+
+​	在css上写相应的过渡效果
+
+```
+/* 路由统一动效 */
+
+/* 动画 */
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+/* 入场-出场 */
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+```
+
+##### 单独设置某个路由动效
+
+​	在对应路由组件设置 transition 来定义动效指定的类名和动效，动效css也可以写在全局css中
+
+```
+<template>
+  <div class="detail">
+    <h3>分类</h3>
+  </div>
+</template>
+<script>
+export default {
+  // 动画名称
+  transition: 'detail'
+}
+</script>
+<style>
+  /* 动画 */
+.detail-enter-active, .detail-leave-active {
+  transition: transform .3s;
+}
+/* 入场-出场 */
+.detail-enter, .detail-leave-active {
+  /* opacity: 0; */
+  transform: translateX(-100%);
+}
+</style>
+```
+
