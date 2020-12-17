@@ -1,5 +1,9 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
+  
+  dev: {
+    devtools: true,
+  },
   head: {
     title: 'my-nuxt',
     meta: [
@@ -11,12 +15,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
+  
   // 配置中间件
   router: {
     middleware: 'auth'
   },
-
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],

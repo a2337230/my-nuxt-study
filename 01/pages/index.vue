@@ -40,6 +40,21 @@ export default {
     } else {
       return true
     }
+  },
+  data() {
+    return {
+      a: 1
+    }
+  },
+  asyncData(context) {
+    console.log('asyncData')
+    return {
+      b: 2
+    }
+  },
+
+  fetch({store}) {
+    console.log('fetch', store)
   }
 }
 </script>
