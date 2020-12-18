@@ -208,7 +208,7 @@ export default {
 >
 > ​								插件全局守卫
 
-前置路由守卫
+##### 前置路由守卫
 
 ```
 // middleware
@@ -241,8 +241,33 @@ middleware({store, route, redirect, params, query}) {
   }
 ```
 
-插件全局守卫
+> ##### 插件全局守卫
 
-在 plugins下创建一个js，并在nuxt.config.js引入
+> 在 plugins下创建一个js，并在nuxt.config.js引入
 
 ![20201218161101](https://github.com/a2337230/my-nuxt-study/blob/main/nuxt-md-img/20201218161101.png)
+
+```
+export default ({app, redirect}) => {
+  console.log('插件', app, redirect)
+  // app Vue实例
+  // redirect 跳转函数
+  app.router.beforeEach((to, from, next) => {
+    // 跳转逻辑
+    next()
+  })
+  app.router.afterEach((to, from) => {
+    console.log('插件后置路由')
+    next()
+  })
+}
+```
+
+> ##### 页面后置守卫
+
+```
+beforeRouteLeave(to, from, next) {
+    // 页面后置守卫
+  }
+```
+

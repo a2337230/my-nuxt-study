@@ -8,3 +8,11 @@
     <nuxt />
   </div>
 </template>
+<script>
+export default {
+  name: 'course',
+  beforeRouteLeave(to, from, next) {
+    // 页面后置守卫
+  }
+}
+</script>
