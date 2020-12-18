@@ -9,6 +9,17 @@ export default {
   // validate ({params, query}) {
   //   return false
   // }
+  middleware({store, route, redirect, params, query}) {
+    console.log("组件独享路由守卫")
+    // store 状态树信息
+    // route 一条目标路由信息
+    // redirect 路由强制跳转
+    // 可利用params query 校验参数合法性
+    // 举例  假如没有接收到id参数就返回首页
+    // if (!params.id) {
+    //   redirect('/index') // 此处写路由守卫逻辑
+    // }
+  }
 }
 </script>
 
