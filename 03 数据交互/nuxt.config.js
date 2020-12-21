@@ -26,6 +26,11 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/router',
+    {
+      src: '~/plugins/axios',
+      ssr: true
+    }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -40,6 +45,18 @@ export default {
     '@nuxtjs/axios'
   ],
 
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api/': {
+      target: "http://xxxxx.com",
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': ''
+      }
+    }
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
