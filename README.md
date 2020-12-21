@@ -271,3 +271,8 @@ beforeRouteLeave(to, from, next) {
   }
 ```
 
+## 第三天
+
+#### 数据交互
+
+> ​	需要用到的依赖 @nuxtjs/axios、@nuxt/proxy
