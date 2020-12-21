@@ -3,7 +3,7 @@ export default function({$axios, router, redirect}) {
   // 超时时间
   $axios.defaults.timeout = 1000
   // 请求拦截
-  $axuis.onRequest(config => {
+  $axios.onRequest(config => {
     console.log('请求拦截', config)
     // 添加header
     config.headers.token = 'xxxxx'
