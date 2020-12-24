@@ -448,3 +448,44 @@ mounted() {
   },
 ```
 
+#### 定义全局过滤器
+
+在真实项目中可能过滤器会非常多，这里我们创建一个JS文件区分各种过滤器
+
+例如时间过滤器
+
+```
+import moment from 'moment'
+export function timeFormat(val) {
+  return moment(val).format('YYYY-MM-DD HH:mm:ss')
+}
+export function timeFormat1(val) {
+  return moment(val).format('YYYY-MM-DD HH:mm')
+}
+```
+
+在mixins中引入全局过滤器
+
+```
+// 定义全局方法
+import Vue from 'vue'
+
+let isShow = () => console.log('这是一个全局方法')
+
+Vue.prototype.$show = isShow; // 在服务器钩子内部不可以使用，this不会指向Vue实例
+
+// 全局过滤器
+import * as filters from '../assets/js/TimeFilters'
+
+Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
+```
+
+在组件中使用
+
+```
+<div class="container">
+  <p>当前时间:{{time | timeFormat}}</p>
+  <p>当前时间:{{time | timeFormat1}}</p>
+</div>
+```
+
