@@ -41,6 +41,9 @@ export default {
       return true
     }
   },
+  mounted() {
+    this.$show()
+  },
   data() {
     return {
       a: 1

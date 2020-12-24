@@ -30,6 +30,14 @@ C:\Windows\System32\drivers\etc\hosts
 
 # 第一天
 
+## 创建项目
+
+```
+npx create-nuxt-app nuxtDemo
+```
+
+
+
 ## 生命周期
 ### nuxtServerInit
 > 初始化时就会执行
@@ -415,5 +423,28 @@ export default {
   }
 }
 </script>
+```
+
+## 第四天
+
+在plugins中新建一个文件，例如叫做mixins.js
+
+假如 内部写入一个方法
+
+```
+// 定义全局方法
+import Vue from 'vue'
+
+let isShow = () => console.log('这是一个全局方法')
+
+Vue.prototype.$show = isShow; // 在服务器钩子内部不可以使用，this不会指向Vue实例
+```
+
+之后就可以在组件内部调用
+
+```
+mounted() {
+    this.$show()
+  },
 ```
 

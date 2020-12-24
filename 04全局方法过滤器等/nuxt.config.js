@@ -35,7 +35,8 @@ export default {
     {
       src: '~/plugins/axios',
       ssr: true
-    }
+    },
+    '~/plugins/mixins'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
