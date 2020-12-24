@@ -489,9 +489,37 @@ Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
 </div>
 ```
 
-### 全局指令
+#### 公共组件
 
+与Vue用法相同
 
+首先创建一个公共组件，例如
 
+```
+<template>
+  <div>
+    <button>一个公共组件按钮</button>
+  </div>
+</template>
+```
 
+全局引入
+
+```
+// 全局组件
+import XlButton from './../components/xlButton.vue'
+Vue.use(XlButton)
+```
+
+页面中使用
+
+```
+<template>
+  <div class="container">
+    <p>当前时间:{{time | timeFormat}}</p>
+    <p>当前时间:{{time | timeFormat1}}</p>
+    <xl-button></xl-button>
+  </div> 
+</template>
+```
 

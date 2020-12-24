@@ -2,6 +2,7 @@
   <div class="container">
     <p>当前时间:{{time | timeFormat}}</p>
     <p>当前时间:{{time | timeFormat1}}</p>
+    <xl-button></xl-button>
   </div> 
 </template>
 

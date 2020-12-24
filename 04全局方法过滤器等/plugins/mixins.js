@@ -9,3 +9,7 @@ Vue.prototype.$show = isShow; // 在服务器钩子内部不可以使用，this�
 import * as filters from '../assets/js/TimeFilters'
 
 Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
+
+// 全局组件
+import XlButton from './../components/xlButton.vue'
+Vue.use(XlButton)
