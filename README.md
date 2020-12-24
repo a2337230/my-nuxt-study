@@ -490,3 +490,4 @@ Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
 ```
 
 ### 全局指令
+
