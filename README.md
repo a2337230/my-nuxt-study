@@ -568,3 +568,18 @@ head() {
 },
 ```
 
+自定义html
+
+```
+<!DOCTYPE html>
+<html {{HTML_ATTRS}}>
+<head {{HEAD_ATTRS}}>
+  {{HEAD}}
+  <!-- 此处可加入个性内容 -->
+</head>
+<body {{BODY_ATTRS}}>
+  {{APP}}
+</body>
+</html>
+```
+

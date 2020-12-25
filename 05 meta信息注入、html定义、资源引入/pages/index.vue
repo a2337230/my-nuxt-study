@@ -8,6 +8,9 @@
 
 <script>
 export default {
+  head() {
+    return this.$seo(title,des, [{}])
+  },
   // middleware: 'auth'
   middleware() {
     console.log("页面层级")
