@@ -13,3 +13,20 @@ Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
 // 全局组件
 import XlButton from './../components/xlButton.vue'
 Vue.use(XlButton)
+
+// 混入meta
+
+Vue.mixin({
+  methods: {
+    $seo(title, content, payload = []) {
+      return {
+        title,
+        meta: [{
+          hid: 'description',
+          name: 'keywords',
+          content
+        }].concat(payload)
+      }
+    }
+  }
+})

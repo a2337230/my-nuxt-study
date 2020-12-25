@@ -541,3 +541,30 @@ head: {
   },
 ```
 
+```
+// 混入meta
+
+Vue.mixin({
+  methods: {
+    $seo(title, content, payload = []) {
+      return {
+        title,
+        meta: [{
+          hid: 'description',
+          name: 'keywords',
+          content
+        }].concat(payload)
+      }
+    }
+  }
+})
+```
+
+组件内使用
+
+```
+head() {
+  return this.$seo(title,des, [{}])
+},
+```
+
