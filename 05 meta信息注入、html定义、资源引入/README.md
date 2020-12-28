@@ -1,98 +1,65 @@
-## 第四天
+#### 第五天meta混入
 
-在plugins中新建一个文件，例如叫做mixins.js
-
-假如 内部写入一个方法
+可以再nuxt.config.js中全局使用
 
 ```
-// 定义全局方法
-import Vue from 'vue'
-
-let isShow = () => console.log('这是一个全局方法')
-
-Vue.prototype.$show = isShow; // 在服务器钩子内部不可以使用，this不会指向Vue实例
-```
-
-之后就可以在组件内部调用
-
-```
-mounted() {
-    this.$show()
+head: {
+    title: 'my-nuxt',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
 ```
 
-#### 定义全局过滤器
-
-在真实项目中可能过滤器会非常多，这里我们创建一个JS文件区分各种过滤器
-
-例如时间过滤器
-
 ```
-import moment from 'moment'
-export function timeFormat(val) {
-  return moment(val).format('YYYY-MM-DD HH:mm:ss')
-}
-export function timeFormat1(val) {
-  return moment(val).format('YYYY-MM-DD HH:mm')
-}
-```
+// 混入meta
 
-在mixins中引入全局过滤器
-
-```
-// 定义全局方法
-import Vue from 'vue'
-
-let isShow = () => console.log('这是一个全局方法')
-
-Vue.prototype.$show = isShow; // 在服务器钩子内部不可以使用，this不会指向Vue实例
-
-// 全局过滤器
-import * as filters from '../assets/js/TimeFilters'
-
-Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
+Vue.mixin({
+  methods: {
+    $seo(title, content, payload = []) {
+      return {
+        title,
+        meta: [{
+          hid: 'description',
+          name: 'keywords',
+          content
+        }].concat(payload)
+      }
+    }
+  }
+})
 ```
 
-在组件中使用
+组件内使用
 
 ```
-<div class="container">
-  <p>当前时间:{{time | timeFormat}}</p>
-  <p>当前时间:{{time | timeFormat1}}</p>
-</div>
+head() {
+  return this.$seo(title,des, [{}])
+},
 ```
 
-#### 公共组件
-
-与Vue用法相同
-
-首先创建一个公共组件，例如
+自定义html
 
 ```
-<template>
-  <div>
-    <button>一个公共组件按钮</button>
-  </div>
-</template>
+<!DOCTYPE html>
+<html {{HTML_ATTRS}}>
+<head {{HEAD_ATTRS}}>
+  {{HEAD}}
+  <!-- 此处可加入个性内容 -->
+</head>
+<body {{BODY_ATTRS}}>
+  {{APP}}
+</body>
+</html>
 ```
 
-全局引入
+资源引入
 
-```
-// 全局组件
-import XlButton from './../components/xlButton.vue'
-Vue.use(XlButton)
-```
+static目录非优化资源，在这个文件夹下的文件打包不会被处理
 
-页面中使用
-
-```
-<template>
-  <div class="container">
-    <p>当前时间:{{time | timeFormat}}</p>
-    <p>当前时间:{{time | timeFormat1}}</p>
-    <xl-button></xl-button>
-  </div> 
-</template>
-```
-
+assets目录下的文件打包会被进行一些优化处理，例如转化为Base64等
